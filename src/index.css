@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+:root,
+#root {
+  height: 100%;
+}
+@layer base {
+  :root {
+    --background: hsl(0, 0%, 96%);
+    --foreground: hsl(0, 0%, 18%);
+    --card: hsl(0, 0%, 100%);
+    --card-foreground: hsl(0, 0%, 18%);
+    --popover: hsl(0, 0%, 100%);
+    --popover-foreground: hsl(0, 0%, 18%);
+    --primary: hsl(0, 0%, 18%);
+    --primary-foreground: hsl(0, 0%, 84%);
+    --secondary: hsl(0, 0%, 87%);
+    --secondary-foreground: hsl(0, 0%, 18%);
+    --muted: hsl(0, 0%, 87%);
+    --muted-foreground: hsl(0, 0%, 87%);
+    --accent: hsl(0, 0%, 87%);
+    --accent-foreground: hsl(0, 0%, 18%);
+    --destructive: hsl(0, 100%, 67%);
+    --destructive-foreground: hsl(0, 0%, 84%);
+    --border: hsl(0, 0%, 84%);
+    --input: hsl(0, 0%, 84%);
+    --ring: hsl(0, 0%, 18%);
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: hsl(0, 0%, 12%);
+    --foreground: hsl(0, 0%, 84%);
+    --card: hsl(0, 0%, 16%);
+    --card-foreground: hsl(0, 0%, 84%);
+    --popover: hsl(0, 0%, 18%);
+    --popover-foreground: hsl(0, 0%, 84%);
+    --primary: hsl(0, 0%, 84%);
+    --primary-foreground: hsl(0, 0%, 18%);
+    --secondary: hsl(0, 0%, 18%);
+    --secondary-foreground: hsl(0, 0%, 84%);
+    --muted: hsl(0, 0%, 18%);
+    --muted-foreground: hsl(0, 0%, 25%);
+    --accent: hsl(0, 0%, 18%);
+    --accent-foreground: hsl(0, 0%, 84%);
+    --destructive: hsl(21, 100%, 66%);
+    --destructive-foreground: hsl(0, 0%, 84%);
+    --border: hsl(0, 0%, 18%);
+    --input: hsl(0, 0%, 18%);
+    --ring: hsl(0, 0%, 84%);
+    --text-secondary: hsl(0, 0%, 41%);
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
