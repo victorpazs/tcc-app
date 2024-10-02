@@ -13,12 +13,12 @@ export function UserMenuContent() {
       <DropdownMenuLabel>Área do usuário</DropdownMenuLabel>
       <DropdownMenuSeparator />
       <DropdownMenuGroup>
-        <Link to="/profile">
+        {/* <Link to="/profile">
           <DropdownMenuItem>
             <User className="mr-2 h-4 w-4" />
             <span>Meu perfil</span>
           </DropdownMenuItem>
-        </Link>
+        </Link> */}
         <Link to="/cronograma">
           <DropdownMenuItem>
             <Calendar className="mr-2 h-4 w-4" />
@@ -37,7 +37,7 @@ export function UserMenuContent() {
       <DropdownMenuSeparator />
       <DropdownMenuItem>
         <LogOut className="mr-2 h-4 w-4" />
-        <span>Log out</span>
+        <span>Sair</span>
       </DropdownMenuItem>
     </>
   );

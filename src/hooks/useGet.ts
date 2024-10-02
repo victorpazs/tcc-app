@@ -23,13 +23,13 @@ export const useGet = <T>(route: string): UseGetResponse<T> => {
         const queryString = query
           ? Object.keys(query)
               .filter((key) => query[key])
-              .map((key) => encodeURIComponent(`${key}=${query[key]}`))
+              .map((key) => `${key}=${query[key]}`)
               .join("&")
           : "";
 
         const url = queryString ? `${endpoint}?${queryString}` : endpoint;
 
-        const response = await axios.get(url);
+        const response = await axios.get(url, { withCredentials: true });
         const { data } = response;
         setData(data);
       } catch (error: unknown) {

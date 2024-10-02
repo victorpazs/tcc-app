@@ -4,6 +4,7 @@ import { createBrowserRouter } from "react-router-dom";
 import RootLayout from "./layouts/root";
 import ErrorLayout from "./layouts/error";
 import AuthLayout from "./layouts/auth";
+import ProtectedLayout from "./layouts/protected";
 
 // PAGES
 
@@ -21,24 +22,29 @@ const router = createBrowserRouter([
     errorElement: <ErrorLayout />,
     children: [
       {
-        path: "",
-        element: <HomePage />,
-      },
-      {
-        path: "/cronograma",
-        element: <TimelinePage />,
-      },
-      {
-        path: "/cursos",
-        element: <CoursesPage />,
-      },
-      {
-        path: "/bancas",
-        element: <JuryPage />,
-      },
-      {
-        path: "/gestao",
-        element: <AdminPage />,
+        element: <ProtectedLayout />,
+        children: [
+          {
+            path: "",
+            element: <HomePage />,
+          },
+          {
+            path: "/cronograma",
+            element: <TimelinePage />,
+          },
+          {
+            path: "/cursos",
+            element: <CoursesPage />,
+          },
+          {
+            path: "/bancas",
+            element: <JuryPage />,
+          },
+          {
+            path: "/gestao",
+            element: <AdminPage />,
+          },
+        ],
       },
     ],
   },

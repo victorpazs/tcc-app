@@ -9,7 +9,7 @@ import moment from "moment";
 moment.locale("pt-br");
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <ThemeProvider storageKey="theme-preference" defaultTheme="dark">
+  <ThemeProvider storageKey="theme-preference" defaultTheme="light">
     <RouterProvider router={router} />
     <Toaster />
   </ThemeProvider>
