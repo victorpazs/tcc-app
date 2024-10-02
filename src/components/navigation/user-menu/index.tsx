@@ -1,4 +1,3 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { ChevronsUpDown, User } from "lucide-react";
 import {
   DropdownMenu,
@@ -6,8 +5,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { UserMenuContent } from "./user-popover-content";
+import { useAuth } from "@/providers/auth-provider";
 
 export function UserMenu() {
+  const { user } = useAuth();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -15,8 +16,8 @@ export function UserMenu() {
           <User className="w-8 h-8" />
 
           <div className="flex flex-col">
-            <h4>Victor Paz</h4>
-            <h5 className="text-sm text-secondary">victorps.2004@gmail.com</h5>
+            <h4>{user?.name}</h4>
+            <h5 className="text-sm text-secondary">{user?.email}</h5>
           </div>
 
           <ChevronsUpDown className="w-4 h-4 color-text-secondary bg-black/5 rounded-sm" />

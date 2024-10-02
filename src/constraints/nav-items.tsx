@@ -12,6 +12,7 @@ export interface INavOption {
   path: string;
   icon: LucideIcon;
   bottom_nav?: boolean;
+  permissions: string[];
 }
 
 export const nav_options: INavOption[] = [
@@ -20,29 +21,34 @@ export const nav_options: INavOption[] = [
     icon: Home,
     path: "/",
     bottom_nav: true,
+    permissions: ["coordinator", "student", "teacher"],
   },
   {
     label: "Cronograma",
     icon: Calendar,
     path: "/cronograma",
     bottom_nav: false,
+    permissions: ["coordinator", "student", "teacher"],
   },
   {
     label: "Bancas",
     icon: Group,
     path: "/bancas",
     bottom_nav: true,
+    permissions: ["coordinator"],
   },
   {
     label: "Cursos",
     icon: BookOpen,
     path: "/cursos",
     bottom_nav: true,
+    permissions: ["coordinator"],
   },
   {
     label: "Gestão",
     icon: Settings,
     path: "/gestao",
     bottom_nav: false,
+    permissions: ["coordinator"],
   },
 ];
