@@ -53,7 +53,7 @@ export function EventCalendar({
           </div>
         )}
       </div>
-      <div className="grid grid-cols-7 overflow-x-auto w-full">
+      <div className="grid grid-cols-7 flex-1 w-full">
         {DAYS_OF_WEEK.map((day) => (
           <span
             key={day}
@@ -68,7 +68,7 @@ export function EventCalendar({
             <div
               key={`${index}-${date.day}`}
               className={cn(
-                "border h-32 relative min-w-16",
+                "border h-12 md:h-28 relative md:min-w-16",
                 index === 0 && "rounded-tl ",
                 index === 6 && "rounded-tr ",
                 date.month !== filter.month && "opacity-50",

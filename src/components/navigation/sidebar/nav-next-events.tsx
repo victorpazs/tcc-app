@@ -26,7 +26,7 @@ const events = [
 export function NavNextEvents() {
   return (
     <div className="mt-6">
-      <span className="text-sm font-medium text-gray-600 flex gap-1 items-center">
+      <span className="text-sm font-medium text-secondary flex gap-1 items-center">
         Próximos eventos
         <Link to="/calendario">
           <ExternalLink size={12} />

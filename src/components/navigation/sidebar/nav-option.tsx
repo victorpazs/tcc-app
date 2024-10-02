@@ -15,7 +15,7 @@ export function NavOption({ label, icon: Icon, path }: INavOption) {
           "outline outline-1 outline-gray-200 dark:outline-[#353535] dark:bg-[#323232a1] bg-slate-300/20"
       )}
     >
-      <Icon className="w-4 h-4" />
+      <Icon className="w-5 h-5 mr-1" />
       {label}
     </Link>
   );

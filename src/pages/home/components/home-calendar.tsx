@@ -4,9 +4,9 @@ import { HomeCard } from "./home-card";
 export default function Calendar() {
   return (
     <HomeCard
-      title="Calendário"
-      description="Toda as suas reuniões e eventos futuros"
-      path="/calendario"
+      title="Cronograma"
+      description="Todas as suas reuniões e tarefas futuras"
+      path="/cronograma"
     >
       <EventCalendar
         is_home

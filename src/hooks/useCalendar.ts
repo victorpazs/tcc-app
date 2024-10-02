@@ -17,8 +17,6 @@ export function useCalendar(filter: CalendarFilter) {
       // Calculate the previous month
       const prevMonth = filter.month === 0 ? 12 : filter.month;
 
-      console.log("filter.month", filter.month);
-
       const totalDaysInPrevMonth = new Date(
         filter.year,
         prevMonth,

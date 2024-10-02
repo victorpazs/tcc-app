@@ -1,10 +1,10 @@
-import { BottomNav } from "@/components/bottom-nav";
-import { Navigation } from "@/components/sidebar";
+import { BottomNav } from "@/components/navigation/bottom-nav";
+import { Sidebar } from "@/components/navigation/sidebar";
 import { Outlet } from "react-router-dom";
-export default function Root() {
+export default function RootLayout() {
   return (
     <div className="h-full flex">
-      <Navigation />
+      <Sidebar />
 
       <main className="p-3 pt-10 pb-16    w-full overflow-y-auto">
         <div className="flex-1  mx-auto h-full max-w-7xl ">

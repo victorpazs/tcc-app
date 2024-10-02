@@ -8,7 +8,7 @@ import { IFilterCourses } from "./types";
 export default function CoursesPage() {
   const [filter, setFilter] = useState<IFilterCourses>({ limit: 5 });
 
-  const { data: courses, loading } = useFetchCourses({ ...filter });
+  const { data: courses, loading } = useFetchCourses();
 
   return (
     <div className="w-full grid grid-cols-12 gap-8">

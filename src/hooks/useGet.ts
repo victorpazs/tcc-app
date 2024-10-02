@@ -1,22 +1,20 @@
 import { useCallback, useState } from "react";
 import axios from "axios";
 import { toast } from "sonner";
-import { apiUrl } from "@/infra";
+import { apiUrl } from "@/constraints/api";
 
 type UseGetResponse<T> = {
   data: T | null;
   loading: boolean;
-  fetchData: (query?: any) => void;
+  fetchData: (query?: Record<string, unknown>) => void;
 };
 
 export const useGet = <T>(route: string): UseGetResponse<T> => {
   const [data, setData] = useState<T | null>(null);
   const [loading, setLoading] = useState<boolean>(false);
 
-  console.log("rerender inside useGet");
-
   const fetchData = useCallback(
-    async (query?: any) => {
+    async (query?: Record<string, unknown>) => {
       setLoading(true);
       const endpoint = `${apiUrl}${route}`;
 
@@ -25,9 +23,10 @@ export const useGet = <T>(route: string): UseGetResponse<T> => {
         const queryString = query
           ? Object.keys(query)
               .filter((key) => query[key])
-              .map((key) => `${key}=${query[key]}`)
+              .map((key) => encodeURIComponent(`${key}=${query[key]}`))
               .join("&")
           : "";
+
         const url = queryString ? `${endpoint}?${queryString}` : endpoint;
 
         const response = await axios.get(url);

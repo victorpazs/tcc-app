@@ -7,12 +7,12 @@ import {
 import { Skeleton } from "@/components/ui/skeleton";
 import moment from "moment";
 
-interface ICourseCard {
+interface IJuryCard {
   name: string;
   created_at?: Date;
   onClick?: () => void;
 }
-export function CourseCard({ name, created_at, onClick }: ICourseCard) {
+export function JuryCard({ name, created_at, onClick }: IJuryCard) {
   return (
     <Card
       onClick={onClick}
@@ -33,7 +33,7 @@ export function CourseCard({ name, created_at, onClick }: ICourseCard) {
   );
 }
 
-CourseCard.Loading = function CourseCardLoading() {
+JuryCard.Loading = function JuryCardLoading() {
   return (
     <Card className="w-full border-none outline-none shadow-sm">
       <div className="flex justify-between items-center pr-6">

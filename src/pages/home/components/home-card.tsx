@@ -1,3 +1,4 @@
+import { Tooltip } from "@/components/tooltip";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -24,7 +25,7 @@ export function HomeCard({
   children,
 }: HomeCardProps) {
   return (
-    <Card className="w-full border-none outline-none shadow-sm">
+    <Card className="w-full border-none outline-none shadow-none">
       <div className="flex justify-between items-center pr-6">
         <CardHeader className="w-full flex-row flex justify-between items-center pr-0">
           <div className="flex flex-col gap-1">
@@ -42,12 +43,13 @@ export function HomeCard({
               )}
             </CardDescription>
           </div>
-
-          <Button variant="ghost" size={"icon"} asChild>
-            <Link to={path}>
-              <ExternalLink size={20} />
-            </Link>
-          </Button>
+          <Tooltip title="Ver mais">
+            <Button variant="ghost" size={"icon"} asChild>
+              <Link to={path}>
+                <ExternalLink size={16} />
+              </Link>
+            </Button>
+          </Tooltip>
         </CardHeader>
       </div>
       <CardContent className="flex flex-col gap-2">{children}</CardContent>
